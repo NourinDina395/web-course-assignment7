@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-white min-h-screen">   {/* ← This makes the whole page white */}
+    <div className="bg-white min-h-screen">   
       <Navbar />
       <Banner />
 
