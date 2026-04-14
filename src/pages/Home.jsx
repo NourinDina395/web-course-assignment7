@@ -20,8 +20,11 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-white">
-        <span className="loading loading-spinner loading-lg text-emerald-600"></span>
+      <div className="bg-white min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <span className="loading loading-spinner loading-lg text-emerald-600"></span>
+          <p className="mt-4 text-gray-600">Loading your friends...</p>
+        </div>
       </div>
     );
   }

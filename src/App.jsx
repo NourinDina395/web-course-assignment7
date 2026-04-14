@@ -18,9 +18,23 @@ function App() {
           <Route path="/friend/:id" element={<FriendDetails />} />
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/stats" element={<Stats />} />
+          
+          {/* 404 Route - Must be at the bottom */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <ToastContainer />
+        
+        {/* Toast Notifications */}
+        <ToastContainer 
+          position="top-right" 
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </Router>
     </TimelineProvider>
   );
