@@ -13,49 +13,83 @@ const Timeline = () => {
     : timeline.filter(entry => entry.type.toLowerCase() === filter);
 
   const getIcon = (type) => {
-    if (type === 'Call') return <Phone className="text-blue-600" />;
-    if (type === 'Text') return <MessageCircle className="text-green-600" />;
-    return <Video className="text-purple-600" />;
+    if (type === 'Call') return <Phone className="text-blue-600" size={24} />;
+    if (type === 'Text') return <MessageCircle className="text-green-600" size={24} />;
+    if (type === 'Video') return <Video className="text-purple-600" size={24} />;
+    if (type === 'Meetup') return <span className="text-3xl">🤝</span>;
+    return <span className="text-3xl">🤝</span>;
+  };
+
+  // Safe date formatter - prevents "Invalid Date"
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+      return dateString; // fallback if date is invalid
+    }
+    return date.toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    });
   };
 
   return (
     <>
       <Navbar />
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex justify-between items-center mb-10">
-          <h1 className="text-4xl font-bold">Interaction Timeline</h1>
+      <div className="container mx-auto px-6 py-12 bg-white min-h-screen">
+        
+        <h1 className="text-4xl font-bold text-gray-900 mb-10">Timeline</h1>
 
-          <div className="flex gap-2">
-            {['all', 'call', 'text', 'video'].map(f => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                className={`btn btn-sm ${filter === f ? 'btn-primary' : 'btn-ghost'}`}
-              >
-                {f.charAt(0).toUpperCase() + f.slice(1)}
-              </button>
-            ))}
+        {/* Filter Dropdown */}
+        <div className="mb-10">
+          <div className="relative w-full max-w-xs">
+            <select
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+              className="w-full bg-white border border-gray-300 rounded-2xl px-5 py-3.5 text-gray-700 appearance-none focus:outline-none focus:border-emerald-600 cursor-pointer"
+            >
+              <option value="all">Filter timeline</option>
+              <option value="call">Call</option>
+              <option value="text">Text</option>
+              <option value="video">Video</option>
+              <option value="meetup">Meetup</option>
+            </select>
+            <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 text-xl">
+              ▼
+            </div>
           </div>
         </div>
 
-        <div className="space-y-6">
+        {/* Timeline Entries */}
+        <div className="space-y-4">
           {filteredTimeline.length === 0 ? (
-            <p className="text-center text-gray-500 py-20">No interactions yet. Start connecting!</p>
+            <div className="text-center py-20 text-gray-500">
+              No interactions yet. Start connecting!
+            </div>
           ) : (
-            filteredTimeline.map(entry => (
-              <div key={entry.id} className="flex gap-6 bg-base-100 p-6 rounded-2xl shadow">
-                <div className="w-12 h-12 rounded-full bg-base-200 flex items-center justify-center flex-shrink-0">
+            filteredTimeline.map((entry) => (
+              <div 
+                key={entry.id} 
+                className="flex gap-6 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-md transition-all"
+              >
+                {/* Icon */}
+                <div className="mt-1">
                   {getIcon(entry.type)}
                 </div>
-                <div>
-                  <div className="font-semibold text-lg">{entry.title}</div>
-                  <div className="text-sm text-gray-500 mt-1">{entry.date}</div>
+
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="font-medium text-gray-900 text-lg">{entry.title}</div>
+                  <div className="text-sm text-gray-500 mt-1">
+                    {formatDate(entry.date)}
+                  </div>
                 </div>
               </div>
             ))
           )}
         </div>
       </div>
+
       <Footer />
     </>
   );

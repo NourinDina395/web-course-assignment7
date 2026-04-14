@@ -150,6 +150,15 @@ const FriendDetails = () => {
                     <Video size={32} className="text-emerald-600" />
                     <span className="font-medium text-sm">Video</span>
                   </button>
+
+                  <button
+                    onClick={() => handleAction('Meetup')}
+                    className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-50 rounded-2xl transition border border-gray-100"
+                  >
+                    <span className="text-3xl">👥</span>
+                    <span className="font-medium text-sm">Meetup</span>
+                  </button>
+                  
                 </div>
               </div>
             </div>
