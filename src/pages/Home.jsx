@@ -20,21 +20,21 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white">
         <span className="loading loading-spinner loading-lg text-emerald-600"></span>
       </div>
     );
   }
 
   return (
-    <>
+    <div className="bg-white min-h-screen">   {/* ← This makes the whole page white */}
       <Navbar />
       <Banner />
 
-      <div className="container mx-auto px-4 py-12">
-        <h2 className="text-2xl font-semibold mb-8">Your Friends</h2>
+      <div className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-semibold text-gray-900 mb-10">Your Friends</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {friends.map(friend => (
             <FriendCard key={friend.id} friend={friend} />
           ))}
@@ -42,7 +42,7 @@ const Home = () => {
       </div>
 
       <Footer />
-    </>
+    </div>
   );
 };
 
