@@ -41,7 +41,7 @@ const FriendDetails = () => {
           
           <button 
             onClick={() => navigate(-1)} 
-            className="btn btn-ghost mb-8 flex items-center gap-2 text-gray-600 hover:text-gray-900"
+            className="btn btn-ghost mb-8 flex items-center gap-2 text-gray-500 hover:text-gray-600"
           >
             ← Back to Friends
           </button>
@@ -67,15 +67,17 @@ const FriendDetails = () => {
                 <p className="text-gray-500 text-sm">Preferred: email</p>
 
                 <div className="w-full mt-8 space-y-3">
-                  <button className="btn btn-outline w-full justify-start gap-3 text-gray-700">
+
+                  <button className="btn btn-outline w-full flex items-center justify-center gap-3 text-gray-900 font-semibold" >
                     ⏰ Snooze 2 Weeks
                   </button>
-                  <button className="btn btn-outline w-full justify-start gap-3 text-gray-700">
+                  <button  className="btn btn-outline w-full flex items-center justify-center gap-3 text-gray-900 font-semibold">
                     📦 Archive
                   </button>
-                  <button className="btn btn-error w-full justify-start gap-3">
+                  <button  className="btn btn-outline w-full flex items-center justify-center gap-3 text-red-500 font-semibold">
                     🗑️ Delete
                   </button>
+
                 </div>
               </div>
             </div>
@@ -86,19 +88,19 @@ const FriendDetails = () => {
               {/* Stats Cards */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                  <Clock className="mx-auto mb-3 text-emerald-600" size={28} />
+                  {/* <Clock className="mx-auto mb-3 text-emerald-600" size={28} /> */}
                   <div className="text-3xl font-bold text-gray-900">{friend.days_since_contact}</div>
                   <div className="text-sm text-gray-500">Days Since Contact</div>
                 </div>
                 
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                  <Target className="mx-auto mb-3 text-emerald-600" size={28} />
-                  <div className="text-3xl font-bold text-gray-900">{friend.goal}</div>
+                   {/* <Target className="mx-auto mb-3 text-emerald-600" size={28} />  */}
+                  <div className="text-3xl font-bold text-gray-900">{friend.goal}</div> 
                   <div className="text-sm text-gray-500">Goal (Days)</div>
                 </div>
                 
                 <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-                  <Calendar className="mx-auto mb-3 text-emerald-600" size={28} />
+                  {/* <Calendar className="mx-auto mb-3 text-emerald-600" size={28} /> */}
                   <div className="text-xl font-semibold text-gray-900">
                     {new Date(friend.next_due_date).toLocaleDateString('en-GB', {
                       day: 'numeric',
@@ -115,9 +117,10 @@ const FriendDetails = () => {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <h3 className="font-semibold text-xl text-gray-900">Relationship Goal</h3>
-                    <p className="text-gray-600 mt-1">Connect every {friend.goal} days</p>
+                    <p className="text-gray-600 mt-1">Connect every 
+                      <span className="text-gray-800 font-semibold"> {friend.goal} days  </span></p>
                   </div>
-                  <button className="btn btn-sm btn-outline flex items-center gap-2">
+                  <button className="btn btn-sm btn-outline flex items-center gap-2 text-gray-500">
                     <Edit2 size={16} /> Edit
                   </button>
                 </div>
@@ -131,34 +134,34 @@ const FriendDetails = () => {
                     onClick={() => handleAction('Call')}
                     className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-50 rounded-2xl transition border border-gray-100"
                   >
-                    <Phone size={32} className="text-emerald-600" />
-                    <span className="font-medium text-sm">Call</span>
+                    <Phone size={32} className="text-gray-900" />
+                    <span className="text-gray-900 font-medium text-sm">Call</span>
                   </button>
 
                   <button
                     onClick={() => handleAction('Text')}
-                    className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-50 rounded-2xl transition border border-gray-100"
+                    className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-200 rounded-2xl transition border border-gray-100"
                   >
-                    <MessageCircle size={32} className="text-emerald-600" />
-                    <span className="font-medium text-sm">Text</span>
+                    <MessageCircle size={32} className="text-gray-900" />
+                    <span className="text-gray-900 font-medium text-sm">Text</span>
                   </button>
 
                   <button
                     onClick={() => handleAction('Video')}
                     className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-50 rounded-2xl transition border border-gray-100"
                   >
-                    <Video size={32} className="text-emerald-600" />
-                    <span className="font-medium text-sm">Video</span>
+                    <Video size={32} className="text-gray-900" />
+                    <span className="text-gray-900 font-medium text-sm">Video</span>
                   </button>
 
                   <button
                     onClick={() => handleAction('Meetup')}
                     className="flex flex-col items-center gap-3 p-6 hover:bg-emerald-50 rounded-2xl transition border border-gray-100"
                   >
-                    <span className="text-3xl">👥</span>
-                    <span className="font-medium text-sm">Meetup</span>
+                    <span className="text-3xl text-gray-900">👥</span>
+                    <span className=" text-gray-900 font-medium text-sm">Meetup</span>
                   </button>
-                  
+
                 </div>
               </div>
             </div>
