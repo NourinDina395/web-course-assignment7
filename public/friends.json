@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Chen",
+    "picture": "https://i.pravatar.cc/300?u=sarah",
+    "email": "sarah.chen@email.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["college", "best friend"],
+    "bio": "Met during freshman year at Dhaka University. We used to explore the city together on weekends.",
+    "goal": 14,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 2,
+    "name": "Rahim Khan",
+    "picture": "https://i.pravatar.cc/300?u=rahim",
+    "email": "rahim.khan@email.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["work", "cricket"],
+    "bio": "My colleague at the office and weekend cricket partner. Always motivates me to stay active.",
+    "goal": 10,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 3,
+    "name": "Priya Rahman",
+    "picture": "https://i.pravatar.cc/300?u=priya",
+    "email": "priya.rahman@email.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["school", "childhood"],
+    "bio": "Childhood best friend from school. We still share our deepest secrets and laugh about old memories.",
+    "goal": 15,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 4,
+    "name": "Arif Hossain",
+    "picture": "https://i.pravatar.cc/300?u=arif",
+    "email": "arif.hossain@email.com",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["gym", "fitness"],
+    "bio": "Gym buddy who pushes me to be better every day. We motivate each other to stay consistent.",
+    "goal": 7,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 5,
+    "name": "Nadia Islam",
+    "picture": "https://i.pravatar.cc/300?u=nadia",
+    "email": "nadia.islam@email.com",
+    "days_since_contact": 8,
+    "status": "on-track",
+    "tags": ["neighbor", "foodie"],
+    "bio": "My neighbor and food exploration partner. We try new restaurants in Dhaka every month.",
+    "goal": 12,
+    "next_due_date": "2026-04-21"
+  },
+  {
+    "id": 6,
+    "name": "Tanzim Ahmed",
+    "picture": "https://i.pravatar.cc/300?u=tanzim",
+    "email": "tanzim.ahmed@email.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["university", "coding"],
+    "bio": "University friend and coding partner. We often discuss new tech trends and build small projects.",
+    "goal": 10,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 7,
+    "name": "Meherun Nessa",
+    "picture": "https://i.pravatar.cc/300?u=meherun",
+    "email": "meherun.nessa@email.com",
+    "days_since_contact": 14,
+    "status": "almost due",
+    "tags": ["cousin", "family"],
+    "bio": "My cousin who feels more like a sister. We share family stories and support each other.",
+    "goal": 20,
+    "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 8,
+    "name": "Fahim Chowdhury",
+    "picture": "https://i.pravatar.cc/300?u=fahim",
+    "email": "fahim.chowdhury@email.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["travel", "adventure"],
+    "bio": "Travel buddy from our trip to Cox's Bazar. Always planning the next adventure together.",
+    "goal": 21,
+    "next_due_date": "2026-04-28"
+  }
+]
