@@ -2,14 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const FriendCard = ({ friend }) => {
-  // Status badge styles (matching screenshot)
   const statusStyles = {
     overdue: 'bg-red-500 text-white',
     'almost due': 'bg-orange-500 text-white',
     'on-track': 'bg-emerald-600 text-white',
   };
 
-  // Tag color mapping (matching screenshot)
   const tagColors = {
     WORK: 'bg-blue-100 text-blue-700',
     FAMILY: 'bg-purple-100 text-purple-700',
@@ -50,15 +48,12 @@ const FriendCard = ({ friend }) => {
           ))}
         </div>
 
-        {/* Status Badge - Bottom */}
+        {/* Status Badge */}
         <div
           className={`mx-auto px-6 py-2 rounded-full text-sm font-semibold ${statusStyles[friend.status] || 'bg-gray-500 text-white'}`}
         >
-          {friend.status === 'almost due' 
-            ? 'Almost Due' 
-            : friend.status === 'on-track' 
-            ? 'On-Track' 
-            : 'Overdue'}
+          {friend.status === 'almost due' ? 'Almost Due' : 
+           friend.status === 'on-track' ? 'On-Track' : 'Overdue'}
         </div>
       </div>
     </Link>
