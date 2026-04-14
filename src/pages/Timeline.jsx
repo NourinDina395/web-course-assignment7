@@ -52,7 +52,7 @@ const Timeline = () => {
               <option value="call">Call</option>
               <option value="text">Text</option>
               <option value="video">Video</option>
-              <option value="meetup">Meetup</option>
+              {/* <option value="meetup">Meetup</option> */}
             </select>
             <div className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-gray-400 text-xl">
               ▼
